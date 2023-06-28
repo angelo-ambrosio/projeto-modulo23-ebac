@@ -54,10 +54,17 @@ $(document).ready(function(){
         })
         .finally(function(){
             setTimeout(function(){
-                $(botao).find('i').removeClass('d-none');
                 $(botao).find('i').addClass('d-none');
+                $(botao).find('i').removeClass('d-none');
             }, 1000);
         })
+    })
+
+    $('#formulario-pedido').submit(function(evento){
+        evento.preventDefault();
+        if($('#nome').val().length == 0){
+            throw new Error ('Digite o nome');
+        }
     })
 })
 
